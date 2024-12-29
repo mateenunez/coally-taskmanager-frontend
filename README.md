@@ -1,36 +1,145 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Task Manager
 
-First, run the development server:
+Task Manager para Coally
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+
+## Deployment
+
+Este trabajo se encuentra desplegado en la siguiente URL:
+
+https://coally-taskmanager-frontend-jri9nhtdx-mateo-nuezs-projects.vercel.app/
+### Local Deployment
+
+Y el backend se encuentra en la siguiente URL:
+
+https://coally-taskmanager-backend.onrender.com/
+
+Para instalar el proyecto desde el backend necesitas los siguientes paquetes:
+
+```
+npm install cors dotenv express express-validator mongoose swagger-jsdoc swagger-ui-express
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Dependencias de desarrollador (opcional):
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```
+npm install nodemon
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Para instalar el proyecto desde el frontend necesitas los siguientes paquetes:
 
-## Learn More
+```
+npm install @next/env next react react-dom react-icons
 
-To learn more about Next.js, take a look at the following resources:
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Dependencias de desarrollador:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+npm install eslint eslint-config-next @eslint/eslintrc postcss tailwindcss
+```
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Environment Variables
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Para ejecutar este proyecto, deberá agregar las siguientes variables de entorno a su archivo .env
+
+Backend:
+
+`CONNECTION_STRING` - String de conexion para MongoDb
+
+`PORT`- Puerto donde se ejecutara el backend 
+
+Frontend:
+
+`NEXT_PUBLIC_API_URL` - la ruta de la API de Express
+
+
+
+
+## Run Locally
+
+
+Una vez instaladas las dependencias y configurados los .env
+
+Para el backend
+
+```bash
+  npm run start
+```
+
+Para el frontend (si no se construyó la solucion)
+
+```bash
+  npm run dev
+```
+
+
+## API Reference
+
+#### Obtener todas las tareas
+
+```http
+  GET /api/tasks/
+```
+
+#### Obtener una tarea
+
+```http
+  GET /api/tasks/${_id}
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `_id`      | `string` | **Requerido**. Id de la tarea a buscar |
+
+
+#### Crear tarea
+
+```http
+  POST /api/tasks/
+```
+
+###### Body Requerido
+
+```json
+{"title":"",
+"description":""}
+```
+
+#### Actualizar tarea
+
+```http
+  PUT /api/tasks/${_id}
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `_id`      | `string` | **Requerido**. Id de la tarea a buscar |
+
+###### Body Requerido
+
+```json
+{"title":"",
+"description":"",
+"completed": true}
+```
+
+#### Eliminar tarea
+
+```http
+  DELETE /api/tasks/${_id}
+```
+
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `_id`      | `string` | **Requerido**. Id de la tarea a buscar |
+
+
+## Screenshots
+
+![Screenshot_1](https://github.com/user-attachments/assets/ab636c71-babb-4c20-9670-ac827b2cde86)
+![Screenshot_2](https://github.com/user-attachments/assets/426ae6a3-9920-4944-9cb7-72afa2c957a8)
