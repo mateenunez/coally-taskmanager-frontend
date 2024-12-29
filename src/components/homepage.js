@@ -24,7 +24,7 @@ function HomePage() {
   return (
 
     <div className='pattern-dots pattern-violet-100 pattern-bg-white 
-  pattern-size-10 pattern-opacity-100'>
+  pattern-size-10 pattern-opacity-100 h-screen'>
       {error==undefined ? 
       (
       <div className='p-8 overflow-hidden'>
