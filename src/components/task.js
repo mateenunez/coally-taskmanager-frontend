@@ -49,22 +49,22 @@ function Task({title, description, createdAt, completed, _id}) {
     }
 
   return (
-    <div className='min-w-80 max-w-96 min-h-52 max-h-96 bg-[#c3acd0] rounded-lg border border-[#d9d9d9] flex flex-col' style={!completeState ? ({backgroundColor: "#c3acd0"}) : ({backgroundColor: "#e3e3e3"})}>
+    <div className='min-w-80 max-w-96 min-h-52 max-h-96 bg-[#c3acd0] rounded-lg border border-[#d9d9d9] flex flex-col animate-fade' style={!completeState ? ({backgroundColor: "#c3acd0"}) : ({backgroundColor: "#e3e3e3"})}>
         <div className='flex flex-row p-4'>
             <div className='flex justify-start p-2'>
             {completeState ? (<><MdOutlineCheckCircleOutline size={40} onClick={handleChange}/></>) : (<><MdOutlineCircle size={40} onClick={handleChange}/></>)}
             </div>
             <div className='flex-col justify-start pl-4 pt-4'>
-            <h4 className="text-2xl font-semibold leading-snug pb-2 transform transition duration-500" style={completeState ? ({textDecoration: "line-through"}) : ({})}>{title}</h4>
+            <h4 className="text-2xl font-semibold leading-snug pb-2" style={completeState ? ({textDecoration: "line-through"}) : ({})}>{title}</h4>
             <h6 className='text-base font-normal' style={completeState ? ({textDecoration: "line-through"}) : ({})}>{description}</h6>
             <h6 className='text-xs pt-5'>{Date(createdAt)}</h6>
             </div>
         </div>
         <div className='flex flex-row pb-3 justify-end h-fit w-full'>
-        <div className='pr-6 justify-start' onClick={handleEdit}>
+        <div className='pr-6 justify-start hover:scale-110 transition ease-in-out delay-100' onClick={handleEdit}>
             <MdEdit size={25}/>
             </div>
-            <div className='pr-6 justify-start' onClick={handleDelete}>
+            <div className='pr-6 justify-start hover:scale-110 transition ease-in-out delay-100' onClick={handleDelete}>
             <MdDelete size={25}/>
             </div>
         </div>

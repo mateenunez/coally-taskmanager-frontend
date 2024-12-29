@@ -16,7 +16,6 @@ function Form() {
             const description = e.target[1].value;
 
             if(title==""){
-                console.log("Error")
              setError({message: "El titulo es obligatorio"});
              return; 
             }
@@ -65,7 +64,7 @@ function Form() {
             <textarea className='rounded-lg border border-[#d9d9d9] h-16 pl-2 w-full break-words' placeholder='Value' defaultValue={pointedTask==undefined ? "" : pointedTask.description}/>
             </div>
             <div>
-                <button className='w-full h-10 p-3 bg-[#c3acd0] rounded-lg border border-[#c3acd0] justify-center items-center gap-2 flex overflow-hidden text-white' type='submit'> Submit </button>
+                <button className='w-full h-10 p-3 bg-[#c3acd0] rounded-lg border border-[#c3acd0] justify-center items-center gap-2 flex overflow-hidden text-white hover:scale-105 transition ease-in-out delay-100' type='submit'> Submit </button>
             </div>
         </form>
         </div>
